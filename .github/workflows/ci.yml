@@ -27,7 +27,7 @@ jobs:
           lune run install
 
       - name: Check code quality
-        run: lune run lint
+        run: lune run check 
 
       - name: Run ESLint
         run: pnpm eslint
