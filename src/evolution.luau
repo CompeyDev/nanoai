@@ -131,7 +131,7 @@ local function evolution(params: {
 
 			-- If agents are running in parallel, wait for all agents to complete
 			-- before resuming the genetic algorithm.
-			fitness:andThen(function(fitness: number)
+			(fitness :: Thenable):andThen(function(fitness: number)
 				threads -= 1
 				agents[index].fitness = fitness
 			end, function(err: any)
