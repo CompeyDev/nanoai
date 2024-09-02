@@ -1,5 +1,6 @@
-std = "luau"
+std = "lune"
 
 [lints]
 global_usage = "allow"
 shadowing = "allow"
+undefined_variable = "allow"

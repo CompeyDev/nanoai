@@ -1,5 +1,4 @@
-local task = require("@lune/task")
-local stdio = require("@lune/stdio")
+local task = task or require("@lune/task")
 
 local init = require("./initializers")
 local types = require("./types")
@@ -137,7 +136,7 @@ local function evolution(params: {
 			end, function(err: any)
 				threads -= 1
 				agents[index].fitness = 0
-				stdio.ewrite(`Agent {index} encountered an error: ` .. err .. "\n")
+				warn(`Agent {index} encountered an error:`, err)
 			end)
 		end
 
