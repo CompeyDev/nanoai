@@ -62,7 +62,7 @@ Nanoai = "littensy/nanoai@VERSION"
 ### XOR problem
 
 ```lua
-local model = Nanoai.create({ 2, 3, 1 }, Activation.TanH)
+local model = Nanoai.create({ 2, 3, 1 }, Nanoai.Activation.TanH)
 
 Nanoai.init.normal(model)
 
