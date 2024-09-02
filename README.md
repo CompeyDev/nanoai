@@ -62,18 +62,18 @@ Nanoai = "littensy/nanoai@VERSION"
 ### XOR problem
 
 ```lua
-local model = Nanoai.create({2, 3, 1}, Activation.TanH)
+local model = Nanoai.create({ 2, 3, 1 }, Activation.TanH)
 
 Nanoai.init.normal(model)
 
-for _ in table.create(500, 0) do
-	Nanoai.backpropagate(model, {0, 1}, {1}, 0.3)
-	Nanoai.backpropagate(model, {1, 0}, {1}, 0.3)
-	Nanoai.backpropagate(model, {0, 0}, {0}, 0.3)
-	Nanoai.backpropagate(model, {1, 1}, {0}, 0.3)
+for _ = 1, 500 do
+	Nanoai.backpropagate(model, { 0, 1 }, { 1 }, 0.3)
+	Nanoai.backpropagate(model, { 1, 0 }, { 1 }, 0.3)
+	Nanoai.backpropagate(model, { 0, 0 }, { 0 }, 0.3)
+	Nanoai.backpropagate(model, { 1, 1 }, { 0 }, 0.3)
 end
 
-Nanoai.predict(model, {0, 1}); -- ~1
+Nanoai.predict(model, { 0, 1 }) -- ~1
 ```
 
 ---
