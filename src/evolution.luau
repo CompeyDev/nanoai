@@ -1,7 +1,7 @@
-local init = require(script.Parent.initializers)
-local types = require(script.Parent.types)
+local init = require("initializers")
+local types = require("types")
 type Network = types.Network
-local copy = require(script.Parent.copy)
+local copy = require("copy")
 
 type Thenable = {
 	andThen: (self: Thenable, resolved: ((...any) -> ())?, rejected: ((unknown) -> ())?) -> Thenable,
