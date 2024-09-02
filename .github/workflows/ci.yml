@@ -33,4 +33,6 @@ jobs:
         run: pnpm eslint
 
       - name: Build model
-        run: rojo build -o nanoai.rbxm
+        run: |
+          darklua process src/ rbx/ 
+          rojo build -o nanoai.rbxm
