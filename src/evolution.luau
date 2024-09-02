@@ -1,7 +1,10 @@
-local init = require("initializers")
-local types = require("types")
+local task = require("@lune/task")
+local stdio = require("@lune/stdio")
+
+local init = require("./initializers")
+local types = require("./types")
 type Network = types.Network
-local copy = require("copy")
+local copy = require("./copy")
 
 type Thenable = {
 	andThen: (self: Thenable, resolved: ((...any) -> ())?, rejected: ((unknown) -> ())?) -> Thenable,
@@ -131,10 +134,10 @@ local function evolution(params: {
 			fitness:andThen(function(fitness: number)
 				threads -= 1
 				agents[index].fitness = fitness
-			end, function(err)
+			end, function(err: any)
 				threads -= 1
 				agents[index].fitness = 0
-				warn(`Agent {index} encountered an error:`, err)
+				stdio.ewrite(`Agent {index} encountered an error: ` .. err .. "\n")
 			end)
 		end
 

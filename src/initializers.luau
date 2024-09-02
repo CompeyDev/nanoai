@@ -1,7 +1,7 @@
-local Activation = require("activation").Activation
-local initialize = require("initialize")
+local Activation = require("./activation").Activation
+local initialize = require("./initialize")
 type Filter = initialize.Filter
-local types = require("types")
+local types = require("./types")
 type Network = types.Network
 
 local DEFAULT_GAIN = {

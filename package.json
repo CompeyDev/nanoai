@@ -2,11 +2,7 @@
 	"name": "@rbxts/nanoai",
 	"version": "0.1.0",
 	"description": "Minimal library for creating neural networks",
-	"scripts": {
-		"lint": "sh bin/check.sh",
-		"wally": "sh bin/install.sh"
-	},
-	"main": "src/init.lua",
+	"main": "src/init.luau",
 	"types": "src/index.d.ts",
 	"keywords": [
 		"roblox",

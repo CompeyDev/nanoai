@@ -1,5 +1,5 @@
-local activation = require("activation")
-local types = require("types")
+local activation = require("./activation")
+local types = require("./types")
 type Network = types.Network
 
 --[=[
